@@ -1,7 +1,32 @@
         #include <stdio.h>
         #include <stdlib.h>
 
-        struct Node{
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: INSERT AT END & DELETE VALUE
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. Head & Tail Insertion:
+ *    - Prepends newNode (5) at the beginning of 10 -> 20 -> 30 -> 40.
+ *    - Traverses to the last node (while current->next != NULL) and appends
+ *      poopNode (99) at the end (5 -> 10 -> 20 -> 30 -> 40 -> 99 -> NULL).
+ *
+ * 2. Delete Node by User-Given Value:
+ *    - Reads iwanttodelete from the user.
+ *    - Case 1 (Head Match): Advances head = current->next and frees the old head.
+ *    - Case 2 (Interior/Tail Match): Walks the list with prev and current
+ *      until finding the target, bypasses it via prev->next = current->next,
+ *      and frees current (or prints a not-found message if absent).
+ *
+ * 3. Display & Cleanup:
+ *    - Traverses the modified list to print values, compute counter and sum,
+ *      and frees all remaining nodes in a loop.
+ * ============================================================================
+ */
+
+struct Node{
 
         int data;
         struct Node *next;

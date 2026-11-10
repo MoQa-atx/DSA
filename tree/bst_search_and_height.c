@@ -1,6 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: BST SEARCH & TREE HEIGHT
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. Node Creation & BST Insertion:
+ *    - newNode(item) allocates and initializes a leaf node.
+ *    - insert(node, data) recursively places new values into the left or
+ *      right subtree based on BST ordering.
+ *
+ * 2. searchBST(struct Node* root, int key):
+ *    - Recursively searches the tree for key and returns a pointer to the
+ *      matching Node (or NULL if the key is not present).
+ *
+ * 3. height(Node* root):
+ *    - Recursively calculates the maximum depth (height) of the BST:
+ *      * Base case (root == NULL): Returns 0.
+ *      * Recursive step: Computes leftHeight and rightHeight, returning
+ *        max(leftHeight, rightHeight) + 1.
+ * ============================================================================
+ */
 
 typedef struct Node {
     int data;

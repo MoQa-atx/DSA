@@ -2,6 +2,32 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: PRINTER JOB QUEUE (FIFO)
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. PrintJob & Queue Structures:
+ *    - PrintJob: Singly linked node storing fileName[50] and next.
+ *    - Queue: Tracks both front (next job to print) and rear (last job
+ *      added) for O(1) enqueue and O(1) dequeue operations.
+ *
+ * 2. enqueuePrintJob(Queue* q, char* fileName):
+ *    - Allocates a new job and attaches it to q->rear->next, updating rear
+ *      (or setting both front and rear if the queue was empty).
+ *
+ * 3. processNextJob(Queue* q):
+ *    - Removes and prints the oldest waiting job at q->front (FIFO order),
+ *      advances front, resets rear = NULL if the queue becomes empty, and
+ *      frees the processed job node.
+ *
+ * 4. showQueue(Queue q):
+ *    - Iterates from front to rear to display all pending print jobs.
+ * ============================================================================
+ */
+
 typedef struct PrintJob {
     char fileName[50];
     struct PrintJob* next;

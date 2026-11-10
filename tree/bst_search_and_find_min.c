@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: BST SEARCH & MINIMUM VALUE
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. BST Construction:
+ *    - Uses insert() to populate a Binary Search Tree from the array
+ *      {40, 20, 60, 10, 30, 50, 70}.
+ *
+ * 2. search(Node* root, int value):
+ *    - Recursively searches for value in O(h) time (where h is tree height):
+ *      * Returns 0 if root == NULL (not found) or 1 if root->data == value.
+ *      * Branches left if value < root->data, or right if value > root->data.
+ *
+ * 3. findMin(Node* root):
+ *    - Exploits the BST property by iteratively following root = root->left
+ *      until root->left == NULL, returning the leftmost (minimum) key.
+ * ============================================================================
+ */
+
 typedef struct Node {
     int data;
     struct Node* left;

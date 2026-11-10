@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: SUM & COUNT OF NODES
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. List Construction:
+ *    - Creates a 4-node singly linked list (10 -> 20 -> 30 -> 40 -> NULL).
+ *
+ * 2. Traversal, Counting & Summation:
+ *    - Initializes counter = 0 and sum = 0.
+ *    - In a single traversal pass (while current != NULL), prints each
+ *      node's value, adds current->data to sum, and increments counter.
+ *
+ * 3. Output & Memory Cleanup:
+ *    - Displays both the total node count and the sum of all node values, then
+ *      frees all four nodes from heap memory.
+ * ============================================================================
+ */
+
 struct Node{
 
 int data;

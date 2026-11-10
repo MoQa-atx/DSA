@@ -2,6 +2,34 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: DOUBLY LINKED LIST PLAYLIST
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. Song Structure (Doubly Linked List Node):
+ *    - Holds name[50] and two pointers (next and prev) enabling
+ *      bidirectional traversal across the playlist.
+ *
+ * 2. addSongToEnd(Song** head, char* name):
+ *    - Allocates a new Song node and appends it to the end of the playlist,
+ *      linking both newSong->prev = current and current->next = newSong.
+ *
+ * 3. removeSong(Song** head, char* name):
+ *    - Locates a song by name using strstr() and handles three removal cases:
+ *      * First song (head): Advances *head and sets (*head)->prev = NULL.
+ *      * Last song (tail): Sets current->prev->next = NULL.
+ *      * Middle song: Bridges current->prev->next and current->next->prev.
+ *
+ * 4. Playback Controls & Display:
+ *    - playNext() & playPrevious(): Move the active current song pointer
+ *      forward or backward while guarding against playlist boundaries.
+ *    - displayPlaylist(): Prints all songs in the playlist in numbered order.
+ * ============================================================================
+ */
+
 typedef struct Song {
     char name[50];
     struct Song* next;

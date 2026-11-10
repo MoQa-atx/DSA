@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: LINEAR SEARCH IN LINKED LIST
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. List Setup & Search Input:
+ *    - Constructs a 4-node linked list (10 -> 20 -> 30 -> 40 -> NULL) and
+ *      prompts the user to enter a target value (search).
+ *
+ * 2. Linear Search During Traversal:
+ *    - Traverses from head to NULL, checking if (search == current->data).
+ *    - If matched, prints a confirmation message and increments flag.
+ *    - Simultaneously accumulates sum and counter.
+ *
+ * 3. Search Verification & Cleanup:
+ *    - If flag <= 0 after the loop, notifies the user that the target value
+ *      does not exist in any node, prints the stats, and frees all nodes.
+ * ============================================================================
+ */
+
 struct Node{
 
 int data;

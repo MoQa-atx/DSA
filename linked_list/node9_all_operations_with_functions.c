@@ -1,6 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: MODULAR SINGLY LINKED LIST
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. Insertion Functions:
+ *    - insertBeginning(head, val): Prepends a new node to the front in O(1).
+ *    - insertEnd(head, val): Appends a new node at the tail in O(n), safely
+ *      handling the empty list (head == NULL) edge case.
+ *
+ * 2. Search & Deletion Functions:
+ *    - search(head, target): Performs linear search and returns a pointer to
+ *      the matching node (or NULL if not found).
+ *    - deleteNode(head, val): Removes the first node matching val, updating
+ *      head if the first node is deleted or relinking prev->next otherwise.
+ *
+ * 3. Aggregation, Display & Cleanup Functions:
+ *    - countNodes(head) & sumNodes(head): Return node count and data sum.
+ *    - display(head): Prints the list formatted as val -> ... -> NULL.
+ *    - freeList(head): Iteratively deallocates all nodes to prevent leaks.
+ * ============================================================================
+ */
+
 void display(struct Node *head);
 
 struct Node{

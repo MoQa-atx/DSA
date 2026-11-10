@@ -2,6 +2,32 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: STACK UNDO TEXT EDITOR
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. Word Structure (LIFO Stack Node):
+ *    - Stores a single word (text[50]) and a next pointer to the previously
+ *      pushed word below it on the stack.
+ *
+ * 2. pushWord(Word** top, char* text) - [add command]:
+ *    - Allocates a new node, links newWord->next = *top, and updates *top
+ *      so the newest word sits at the top of the stack in O(1) time.
+ *
+ * 3. popWord(Word** top) - [undo command]:
+ *    - Removes and frees the most recently added word at *top, restoring
+ *      *top = (*top)->next (or prints "Nothing to undo!" if empty).
+ *
+ * 4. Chronological Display (Recursive Traversal) - [show command]:
+ *    - printWordsInOrder() recurses to the bottom of the stack first and
+ *      prints words as the call stack unwinds, displaying the text in the
+ *      exact order the user typed it.
+ * ============================================================================
+ */
+
 typedef struct Word {
     char text[50];
     struct Word* next;

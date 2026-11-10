@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * ============================================================================
+ * DATA STRUCTURES & ALGORITHMS - LAB ASSIGNMENT: INSERT AT HEAD & LOOP FREE
+ * ============================================================================
+ *
+ * OVERVIEW & LOGIC:
+ *
+ * 1. Initial List Construction:
+ *    - Allocates four nodes (10 -> 20 -> 30 -> 40 -> NULL) plus newNode.
+ *
+ * 2. Insert at Beginning (O(1) Head Insertion):
+ *    - Sets newNode->data = 5, links newNode->next = head, and updates
+ *      head = newNode, resulting in 5 -> 10 -> 20 -> 30 -> 40 -> NULL.
+ *
+ * 3. Traversal & Iterative Memory Cleanup:
+ *    - Prints all node values while computing counter and sum.
+ *    - Frees the entire list dynamically using a while loop and a temporary
+ *      pointer (temp = current->next; free(current); current = temp;).
+ * ============================================================================
+ */
+
 struct Node{
 
 int data;
